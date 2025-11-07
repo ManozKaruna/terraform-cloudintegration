@@ -1,6 +1,6 @@
 resource "azurerm_virtual_network" "vnet" {
   name                = "manoj-network"
-  location            = "eastus"
-  resource_group_name = "sap-dev-manoj-rg-kyn"
+  location            = azurerm_resource_group.rg-kyn.location
+  resource_group_name = azurerm_resource_group.rg-kyn.name
   address_space       = ["10.0.0.0/16"]
 }
